@@ -19,6 +19,6 @@ class NavigationStorageConfig extends AbstractBundleConfig
      */
     public static function isCollectorCompatibilityMode()
     {
-        return true;
+        return false;
     }
 }
