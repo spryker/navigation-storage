@@ -11,9 +11,6 @@ use Spryker\Zed\NavigationStorage\NavigationStorageConfig;
 
 class NavigationStorageConfigMock extends NavigationStorageConfig
 {
-    /**
-     * @return bool
-     */
     public function isSendingToQueue(): bool
     {
         return false;

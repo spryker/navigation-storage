@@ -26,9 +26,6 @@ class NavigationStoragePersistenceFactory extends AbstractPersistenceFactory
         return SpyNavigationStorageQuery::create();
     }
 
-    /**
-     * @return \Orm\Zed\Locale\Persistence\SpyLocaleQuery
-     */
     public function getLocalePropelQuery(): SpyLocaleQuery
     {
         return $this->getProvidedDependency(NavigationStorageDependencyProvider::PROPEL_QUERY_LOCALE);

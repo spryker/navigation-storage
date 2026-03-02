@@ -48,9 +48,6 @@ class NavigationStorageBusinessFactory extends AbstractBusinessFactory
         return $this->getProvidedDependency(NavigationStorageDependencyProvider::FACADE_NAVIGATION);
     }
 
-    /**
-     * @return \Spryker\Zed\NavigationStorage\Dependency\Facade\NavigationStorageToStoreFacadeInterface
-     */
     public function getStoreFacade(): NavigationStorageToStoreFacadeInterface
     {
         return $this->getProvidedDependency(NavigationStorageDependencyProvider::FACADE_STORE);

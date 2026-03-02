@@ -33,10 +33,6 @@ class NavigationStorage implements NavigationStorageInterface
      */
     protected $translations = [];
 
-    /**
-     * @param \Spryker\Client\NavigationStorage\Dependency\Client\NavigationStorageToStorageClientInterface $storageClient
-     * @param \Spryker\Client\NavigationStorage\Dependency\Service\NavigationStorageToSynchronizationServiceInterface $synchronizationService
-     */
     public function __construct(
         NavigationStorageToStorageClientInterface $storageClient,
         NavigationStorageToSynchronizationServiceInterface $synchronizationService
@@ -67,12 +63,6 @@ class NavigationStorage implements NavigationStorageInterface
         return $this->mapNavigationTree($navigationTreeData);
     }
 
-    /**
-     * @param string $navigationKey
-     * @param string $localeName
-     *
-     * @return \Generated\Shared\Transfer\NavigationStorageTransfer
-     */
     protected function getNavigationTreeFromCollectorData(string $navigationKey, string $localeName): NavigationStorageTransfer
     {
         $clientLocatorClass = Locator::class;
@@ -95,11 +85,6 @@ class NavigationStorage implements NavigationStorageInterface
         return $this->mapNavigationTree($navigationTreeData);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\NavigationTreeNodeTransfer $navigationTreeNodeTransfer
-     *
-     * @return array
-     */
     protected function formatCollectorData(NavigationTreeNodeTransfer $navigationTreeNodeTransfer): array
     {
         $nodeArray = $navigationTreeNodeTransfer->getNavigationNode()->toArray();

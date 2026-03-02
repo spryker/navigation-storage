@@ -16,8 +16,5 @@ interface NavigationStorageToNavigationQueryContainerInterface
      */
     public function queryNavigationNode();
 
-    /**
-     * @return \Orm\Zed\Navigation\Persistence\SpyNavigationQuery
-     */
     public function queryNavigation(): SpyNavigationQuery;
 }

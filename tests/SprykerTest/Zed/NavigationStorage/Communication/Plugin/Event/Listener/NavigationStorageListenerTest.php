@@ -46,9 +46,6 @@ class NavigationStorageListenerTest extends Unit
      */
     protected $tester;
 
-    /**
-     * @return void
-     */
     public function testNavigationStorageListenerStoreData(): void
     {
         $beforeCount = SpyNavigationStorageQuery::create()->count();
@@ -67,9 +64,6 @@ class NavigationStorageListenerTest extends Unit
         $this->assertNavigationStorage($beforeCount, $navigationTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testNavigationStoragePublishListener(): void
     {
         $beforeCount = SpyNavigationStorageQuery::create()->count();
@@ -88,9 +82,6 @@ class NavigationStorageListenerTest extends Unit
         $this->assertNavigationStorage($beforeCount, $navigationTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testNavigationStorageUnpublishListener(): void
     {
         $navigationStorageUnpublishListener = new NavigationStorageUnpublishListener();
@@ -110,9 +101,6 @@ class NavigationStorageListenerTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testNavigationNodeStorageListenerStoreData(): void
     {
         $beforeCount = SpyNavigationStorageQuery::create()->count();
@@ -138,9 +126,6 @@ class NavigationStorageListenerTest extends Unit
         $this->assertNavigationNodeStorage($beforeCount, $navigationNodeTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testNavigationNodeLocalizedAttributeStorageListenerStoreData(): void
     {
         $beforeCount = SpyNavigationStorageQuery::create()->count();
@@ -167,9 +152,6 @@ class NavigationStorageListenerTest extends Unit
         $this->assertNavigationNodeStorage($beforeCount, $navigationNodeTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testNavigationUrlRelationStorageListenerStoreData(): void
     {
         $beforeCount = SpyNavigationStorageQuery::create()->count();
@@ -195,9 +177,6 @@ class NavigationStorageListenerTest extends Unit
         $this->assertNavigationNodeStorage($beforeCount, $navigationNodeTransfer);
     }
 
-    /**
-     * @return \Spryker\Zed\NavigationStorage\Business\NavigationStorageFacade
-     */
     protected function getNavigationStorageFacade(): NavigationStorageFacade
     {
         $factory = new NavigationStorageBusinessFactory();
@@ -209,12 +188,6 @@ class NavigationStorageListenerTest extends Unit
         return $facade;
     }
 
-    /**
-     * @param int $beforeCount
-     * @param \Generated\Shared\Transfer\NavigationTransfer $navigationTransfer
-     *
-     * @return void
-     */
     protected function assertNavigationStorage(int $beforeCount, NavigationTransfer $navigationTransfer): void
     {
         $navigationStorageCount = SpyNavigationStorageQuery::create()->count();
@@ -230,12 +203,6 @@ class NavigationStorageListenerTest extends Unit
         $this->assertSame($navigationTransfer->getName(), $data['name']);
     }
 
-    /**
-     * @param int $beforeCount
-     * @param \Generated\Shared\Transfer\NavigationNodeTransfer $navigationNodeTransfer
-     *
-     * @return void
-     */
     protected function assertNavigationNodeStorage(int $beforeCount, NavigationNodeTransfer $navigationNodeTransfer): void
     {
         $navigationStorageCount = SpyNavigationStorageQuery::create()->count();
