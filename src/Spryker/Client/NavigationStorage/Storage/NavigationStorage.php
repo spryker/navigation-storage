@@ -132,4 +132,12 @@ class NavigationStorage implements NavigationStorageInterface
 
         return $this->synchronizationService->getStorageKeyBuilder(NavigationStorageConstants::RESOURCE_NAME)->generateKey($synchronizationDataTransfer);
     }
+
+    public function saveNavigationTree(NavigationStorageTransfer $navigationStorageTransfer, string $navigationKey, string $localeName): void
+    {
+        $storageKey = $this->generateKey($navigationKey, $localeName);
+        $navigationTreeData = $navigationStorageTransfer->toArray(true, true);
+
+        $this->storageClient->set($storageKey, json_encode($navigationTreeData));
+    }
 }

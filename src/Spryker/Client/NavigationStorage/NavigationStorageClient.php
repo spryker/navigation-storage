@@ -7,6 +7,7 @@
 
 namespace Spryker\Client\NavigationStorage;
 
+use Generated\Shared\Transfer\NavigationStorageTransfer;
 use Spryker\Client\Kernel\AbstractClient;
 
 /**
@@ -29,5 +30,23 @@ class NavigationStorageClient extends AbstractClient implements NavigationStorag
         return $this->getFactory()
             ->createNavigationStorage()
             ->findNavigationTreeByNavigationKey($navigationKey, $localeName);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * @api
+     *
+     * @param \Generated\Shared\Transfer\NavigationStorageTransfer $navigationStorageTransfer
+     * @param string $navigationKey
+     * @param string $localeName
+     *
+     * @return void
+     */
+    public function saveNavigationTree(NavigationStorageTransfer $navigationStorageTransfer, string $navigationKey, string $localeName): void
+    {
+        $this->getFactory()
+            ->createNavigationStorage()
+            ->saveNavigationTree($navigationStorageTransfer, $navigationKey, $localeName);
     }
 }

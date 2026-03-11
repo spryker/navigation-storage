@@ -44,6 +44,9 @@
         <property name="name" type="string"/>
         <property name="key" type="string"/>
         <property name="id" type="int"/>
+        <property name="cacheTime" type="string"/>
+        <property name="revalidteTime" type="string"/>
+        <property name="renderedContent" type="array" singular="renderedContent"/>
     </transfer>
 
     <transfer name="NavigationNodeStorage">

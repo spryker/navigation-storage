@@ -31,4 +31,9 @@ class NavigationStorageToStorageClientBridge implements NavigationStorageToStora
     {
         return $this->storageClient->get($key);
     }
+
+    public function set(string $key, mixed $value, ?int $ttl = null): mixed
+    {
+        return $this->storageClient->set($key, $value, $ttl);
+    }
 }

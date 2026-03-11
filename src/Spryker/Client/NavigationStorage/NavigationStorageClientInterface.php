@@ -7,6 +7,8 @@
 
 namespace Spryker\Client\NavigationStorage;
 
+use Generated\Shared\Transfer\NavigationStorageTransfer;
+
 interface NavigationStorageClientInterface
 {
     /**
@@ -22,4 +24,19 @@ interface NavigationStorageClientInterface
      * @return \Generated\Shared\Transfer\NavigationStorageTransfer|null
      */
     public function findNavigationTreeByKey($navigationKey, $localeName);
+
+    /**
+     * Specification:
+     * - Saves navigation tree to the Key-Value Storage.
+     * - Updates existing navigation tree with rendered content and hash.
+     *
+     * @api
+     *
+     * @param \Generated\Shared\Transfer\NavigationStorageTransfer $navigationStorageTransfer
+     * @param string $navigationKey
+     * @param string $localeName
+     *
+     * @return void
+     */
+    public function saveNavigationTree(NavigationStorageTransfer $navigationStorageTransfer, string $navigationKey, string $localeName): void;
 }

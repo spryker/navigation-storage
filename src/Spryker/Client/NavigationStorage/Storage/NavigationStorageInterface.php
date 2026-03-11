@@ -7,6 +7,8 @@
 
 namespace Spryker\Client\NavigationStorage\Storage;
 
+use Generated\Shared\Transfer\NavigationStorageTransfer;
+
 interface NavigationStorageInterface
 {
     /**
@@ -16,4 +18,6 @@ interface NavigationStorageInterface
      * @return \Generated\Shared\Transfer\NavigationStorageTransfer|null
      */
     public function findNavigationTreeByNavigationKey($navigationKey, $localeName);
+
+    public function saveNavigationTree(NavigationStorageTransfer $navigationStorageTransfer, string $navigationKey, string $localeName): void;
 }

@@ -15,4 +15,6 @@ interface NavigationStorageToStorageClientInterface
      * @return mixed
      */
     public function get($key);
+
+    public function set(string $key, mixed $value, ?int $ttl = null): mixed;
 }
