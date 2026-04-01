@@ -30,6 +30,16 @@ class NavigationStorageConstants
      *
      * @var string
      */
+    public const string NAVIGATION_PUBLISH_QUEUE = 'publish.navigation';
+
+    /**
+     * Specification:
+     * - Queue name as used for processing translation messages
+     *
+     * @api
+     *
+     * @var string
+     */
     public const NAVIGATION_SYNC_STORAGE_ERROR_QUEUE = 'sync.storage.category.error';
 
     /**
