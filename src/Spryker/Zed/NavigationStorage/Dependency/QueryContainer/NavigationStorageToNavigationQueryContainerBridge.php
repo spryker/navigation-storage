@@ -17,11 +17,11 @@ class NavigationStorageToNavigationQueryContainerBridge implements NavigationSto
     protected $navigationQueryContainer;
 
     /**
-     * @param \Spryker\Zed\Navigation\Persistence\NavigationQueryContainerInterface $NavigationQueryContainer
+     * @param \Spryker\Zed\Navigation\Persistence\NavigationQueryContainerInterface $navigationQueryContainer
      */
-    public function __construct($NavigationQueryContainer)
+    public function __construct($navigationQueryContainer)
     {
-        $this->navigationQueryContainer = $NavigationQueryContainer;
+        $this->navigationQueryContainer = $navigationQueryContainer;
     }
 
     /**
